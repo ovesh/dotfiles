@@ -1,0 +1,27 @@
+[user]
+	name = Avishai Weissberg
+	email = ovesh1@gmail.com
+[core]
+	excludesfile = /Users/ovesh/.gitignore_global
+[difftool "sourcetree"]
+	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --nosplash \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+	trustExitCode = true
+[color]
+	status = auto
+	diff = auto
+[alias]
+  rename = "!f() { \
+    echo git checkout $1 && \
+    git checkout $1 && \
+    echo git checkout -b $2 && \
+    git checkout -b $2 && \
+    echo git push origin -u $2 && \
+    git push origin -u $2 && \
+    echo git branch -d $1 && \
+    git branch -d $1 && \
+    echo git push origin :$1 && \
+    git push origin :$1; \
+    }; f"
