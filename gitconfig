@@ -1,6 +1,6 @@
 [user]
 	name = Avishai Weissberg
-	email = ovesh1@gmail.com
+	email = avishai.weissberg@kvh.co.jp
 [core]
 	excludesfile = /Users/ovesh/.gitignore_global
 [difftool "sourcetree"]
@@ -25,3 +25,11 @@
     echo git push origin :$1 && \
     git push origin :$1; \
     }; f"
+  maketracking = !sh -c 'b=`git symbolic-ref HEAD | sed \"s/^refs\\/heads\\///\"` && test \"$b\" != \"\" && git branch --set-upstream \"${b}\" \"origin/${b}\"'
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit
+[diff]
+	tool = diffmerge
+[difftool "diffmerge"]
+	cmd = /Applications/DiffMerge.app/Contents/Resources/diffmerge.sh $LOCAL $REMOTE
+[push]
+	default = simple

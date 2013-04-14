@@ -1,4 +1,22 @@
 set nocompatible
+" required by vundle (?)
+filetype on
+filetype off
+
+" more vundle requirements
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+"Bundle 'taglist.vim'
+"Bundle 'AutoTag'
+Bundle 'The-NERD-Commenter'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'scrooloose/syntastic'
+Bundle 'nono/vim-handlebars'
+Bundle 'file-line'
+
+
 
 set number
 set ruler
@@ -31,14 +49,14 @@ set laststatus=2
 " Without setting this, ZoomWin restores windows in a way that causes
 " equalalways behavior to be triggered the next time CommandT is used.
 " This is likely a bludgeon to solve some other issue, but it works
-set noequalalways
+" set noequalalways
 
 " NERDTree configuration
-let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
-map <Leader>n :NERDTreeToggle<CR>
+" let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
+" map <Leader>n :NERDTreeToggle<CR>
 
 " Command-T configuration
-let g:CommandTMaxHeight=20
+" let g:CommandTMaxHeight=20
 
 " ZoomWin configuration
 " map <Leader><Leader> :ZoomWin<CR>
@@ -65,15 +83,15 @@ endif
 " endfunction
 
 " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru,*.rake}    set ft=ruby
 
 " md, markdown, and mk are markdown and define buffer-local preview
-au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
+" au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 
 " add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript
 
-au BufRead,BufNewFile *.txt call s:setupWrapping()
+" au BufRead,BufNewFile *.txt call s:setupWrapping()
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -83,15 +101,15 @@ filetype plugin indent on
 
 " Opens an edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>e
-map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+" map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
 " Opens a tab edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>t
-map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
+" map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 " Inserts the path of the currently edited file into a command
 " Command mode: Ctrl+P
-cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
+" cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
 " Unimpaired configuration
 " Bubble single lines
@@ -115,8 +133,8 @@ let g:syntastic_quiet_warnings=1
 " let g:gist_open_browser_after_post = 1
 
 " Use modeline overrides
-set modeline
-set modelines=10
+" set modeline
+" set modelines=10
 
 " Default color scheme
 color desert
@@ -129,28 +147,43 @@ set directory=~/.vim/backup
 " let g:JSLintHighlightErrorLine = 0
 
 " MacVIM shift+arrow-keys behavior (required in .vimrc)
-let macvim_hig_shift_movement = 1
+" let macvim_hig_shift_movement = 1
 
 " % to bounce from do to end etc.
 " runtime! macros/matchit.vim
 
 " Show (partial) command in the status line
-set showcmd
+" set showcmd
 
-set guifont=Monaco:h14
+set guifont=Monaco:h12
 
 " share with system clipboard
 set clipboard=unnamed
 
+" select last pasted text
 nnoremap <leader>v V`]
+" shortcut for showing code outline
+:ca Tt TlistToggle
+
 
 " remove space from end of lines
 autocmd BufWritePre *.rb :%s/\s\+$//e
 autocmd BufWritePre *.erb :%s/\s\+$//e
+autocmd BufWritePre *.js :%s/\s\+$//e
+autocmd BufWritePre *.css :%s/\s\+$//e
+
+autocmd bufwritepost .vimrc source %
+
+" :source /Users/ovesh/rails_i18n.vim
+
+" required by taglist
+" filetype on
 
 " Include user's local vim config
-if filereadable(expand("~/.vimrc.local"))
-  source ~/.vimrc.local
-endif
+" if filereadable(expand("~/.vimrc.local"))
+"   source ~/.vimrc.local
+" endif
 
+" disable F1 starting the help on Macvim
+:nmap <F1> <nop
 
