@@ -3,6 +3,7 @@
 	email = avishai.weissberg@kvh.co.jp
 [core]
 	excludesfile = /Users/ovesh/.gitignore_global
+	editor = vim
 [difftool "sourcetree"]
 	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --nosplash \"$LOCAL\" \"$REMOTE\"
 	path = 

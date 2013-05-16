@@ -35,3 +35,7 @@ bindkey '^R' history-incremental-search-backward
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
+export EDITOR=vim
+
+export LC_CTYPE=en_US.UTF-8
+
