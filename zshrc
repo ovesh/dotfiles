@@ -31,7 +31,8 @@ alias martin='pkgit --ng --np'
 alias grepp='grep -rn --color=always'
 alias rmorig='find . -name "*.orig" -exec rm {} \;'
 
-bindkey '^R' history-incremental-search-backward
+bindkey '^R' history-incremental-pattern-search-backward
+bindkey '^[[Z' reverse-menu-complete
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
@@ -39,3 +40,10 @@ export EDITOR=vim
 
 export LC_CTYPE=en_US.UTF-8
 
+export ORACLE_HOME=/opt/oracle/instantclient_11_2
+export NLS_LANG=.UTF8
+export TNS_ADMIN=/opt/oracle/tns
+export PATH=$ORACLE_HOME:$PATH
+export DYLD_LIBRARY_PATH=$ORACLE_HOME:$DYLD_LIBRARY_PATH
+
+export database_yml_override=config/override_db.yml

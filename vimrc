@@ -15,6 +15,8 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'scrooloose/syntastic'
 Bundle 'nono/vim-handlebars'
 Bundle 'file-line'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'plasticboy/vim-markdown'
 
 
 
@@ -87,6 +89,7 @@ au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru,*.rake}  
 
 " md, markdown, and mk are markdown and define buffer-local preview
 " au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
+au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} set ft=markdown
 
 " add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript
@@ -186,4 +189,5 @@ autocmd bufwritepost .vimrc source %
 
 " disable F1 starting the help on Macvim
 :nmap <F1> <nop
+:set wrap
 
