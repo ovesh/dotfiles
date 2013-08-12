@@ -18,8 +18,6 @@ Bundle 'file-line'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'plasticboy/vim-markdown'
 
-
-
 set number
 set ruler
 syntax on
@@ -28,7 +26,7 @@ syntax on
 set encoding=utf-8
 
 " Whitespace stuff
-set nowrap
+set wrap
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
@@ -189,5 +187,4 @@ autocmd bufwritepost .vimrc source %
 
 " disable F1 starting the help on Macvim
 :nmap <F1> <nop
-:set wrap
 
