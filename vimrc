@@ -17,6 +17,7 @@ Bundle 'nono/vim-handlebars'
 Bundle 'file-line'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'plasticboy/vim-markdown'
+Bundle 'tsaleh/vim-matchit'
 
 set number
 set ruler
