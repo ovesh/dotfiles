@@ -13,6 +13,7 @@
 [color]
 	status = auto
 	diff = auto
+  grep = always
 [alias]
   rename = "!f() { \
     echo git checkout $1 && \
