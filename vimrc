@@ -18,6 +18,7 @@ Bundle 'file-line'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'tsaleh/vim-matchit'
+Bundle 'tpope/vim-surround'
 
 set number
 set ruler
@@ -89,6 +90,7 @@ au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru,*.rake}  
 " md, markdown, and mk are markdown and define buffer-local preview
 " au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} set ft=markdown
+let g:vim_markdown_folding_disabled=1
 
 " add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript
@@ -123,7 +125,7 @@ filetype plugin indent on
 
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
-let g:syntastic_quiet_warnings=1
+let g:syntastic_quiet_messages={'level': 'warnings'}
 
 " gist-vim defaults
 " if has("mac")
@@ -188,4 +190,3 @@ autocmd bufwritepost .vimrc source %
 
 " disable F1 starting the help on Macvim
 :nmap <F1> <nop
-

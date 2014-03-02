@@ -34,3 +34,5 @@
 	cmd = /Applications/DiffMerge.app/Contents/Resources/diffmerge.sh $LOCAL $REMOTE
 [push]
 	default = simple
+[grep]
+	lineNumber = true
