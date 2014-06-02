@@ -40,10 +40,7 @@ export EDITOR=vim
 
 export LC_CTYPE=en_US.UTF-8
 
-export ORACLE_HOME=/opt/oracle/instantclient_11_2
-export NLS_LANG=.UTF8
-export TNS_ADMIN=/opt/oracle/tns
-export PATH=$ORACLE_HOME:$PATH
-export DYLD_LIBRARY_PATH=$ORACLE_HOME:$DYLD_LIBRARY_PATH
-
-export database_yml_override=config/override_db.yml
+export JAVA_HOME=/usr/java/jdk1.6.0_21_x64
+export INDEED_PROJECT_DIR=$HOME/reps
+PATH=$INDEED_PROJECT_DIR/javadev/bin:$PATH
+export INDEED_CONFIG_DIR=$INDEED_PROJECT_DIR/javadev/myconfig

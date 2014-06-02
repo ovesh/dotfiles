@@ -164,7 +164,8 @@ set directory=~/.vim/backup
 " Show (partial) command in the status line
 " set showcmd
 
-set guifont=Monaco:h12
+set guifont=Monospace:h12
+set gfn=Monospace\ 9
 
 " share with system clipboard
 set clipboard=unnamed
