@@ -4,21 +4,26 @@ filetype on
 filetype off
 
 " more vundle requirements
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
-"Bundle 'taglist.vim'
-"Bundle 'AutoTag'
-Bundle 'The-NERD-Commenter'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'scrooloose/syntastic'
-Bundle 'nono/vim-handlebars'
-Bundle 'file-line'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'tsaleh/vim-matchit'
-Bundle 'tpope/vim-surround'
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'gmarik/vundle'
+"Plugin 'taglist.vim'
+"Plugin 'AutoTag'
+Plugin 'The-NERD-Commenter'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'scrooloose/syntastic'
+Plugin 'nono/vim-handlebars'
+Plugin 'file-line'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'jwhitley/vim-matchit'
+Plugin 'tpope/vim-surround'
+
+call vundle#end()
+filetype plugin indent on
 
 set number
 set ruler
