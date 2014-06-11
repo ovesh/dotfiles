@@ -21,6 +21,8 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'jwhitley/vim-matchit'
 Plugin 'tpope/vim-surround'
+Plugin 'garyharan/vim-proto'
+Plugin 'motus/pig.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -168,7 +170,7 @@ set guifont=Monospace:h12
 set gfn=Monospace\ 9
 
 " share with system clipboard
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 " select last pasted text
 nnoremap <leader>v V`]
@@ -196,3 +198,6 @@ autocmd bufwritepost .vimrc source %
 
 " disable F1 starting the help on Macvim
 :nmap <F1> <nop
+
+:set lines=60 columns=180
+

@@ -40,7 +40,7 @@ export EDITOR=vim
 
 export LC_CTYPE=en_US.UTF-8
 
-export JAVA_HOME=/usr/java/jdk1.6.0_21_x64
+export JAVA_HOME=/usr/lib/jvm/java-6-oracle/
 export INDEED_PROJECT_DIR=$HOME/reps
 PATH=$INDEED_PROJECT_DIR/javadev/bin:$PATH
 export INDEED_CONFIG_DIR=$INDEED_PROJECT_DIR/javadev/myconfig

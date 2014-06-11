@@ -1,6 +1,6 @@
 [user]
 	name = Avishai Weissberg
-	email = avishai.weissberg@kvh.co.jp
+	email = avishai@indeed.com
 [core]
 	excludesfile = /Users/ovesh/.gitignore_global
 	editor = vim
