@@ -12,7 +12,7 @@
 	trustExitCode = true
 [color]
 	status = auto
-	diff = auto
+	diff = always
   grep = always
 [alias]
   rename = "!f() { \
@@ -33,7 +33,7 @@
 	tool = diffmerge
 [difftool "diffmerge"]
 	cmd = /Applications/DiffMerge.app/Contents/Resources/diffmerge.sh $LOCAL $REMOTE
-[push]
-	default = simple
 [grep]
 	lineNumber = true
+[push]
+	default = simple

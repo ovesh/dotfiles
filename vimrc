@@ -7,8 +7,6 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'gmarik/Vundle.vim'
-
 Plugin 'gmarik/vundle'
 "Plugin 'taglist.vim'
 "Plugin 'AutoTag'
@@ -166,7 +164,7 @@ set directory=~/.vim/backup
 " Show (partial) command in the status line
 " set showcmd
 
-set guifont=Monospace:h12
+set guifont=Monospace\ 10
 set gfn=Monospace\ 9
 
 " share with system clipboard

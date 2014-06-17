@@ -30,6 +30,10 @@ alias authp='pushd /Users/ovesh/reps/corp-sso/opt/auth-provider/'
 alias martin='pkgit --ng --np'
 alias grepp='grep -rn --color=always'
 alias rmorig='find . -name "*.orig" -exec rm {} \;'
+alias boop='aplay /usr/share/sounds/speech-dispatcher/test.wav'
+alias open='xdg-open'
+alias cb='xclip -selection clipboard'
+alias anti='ant -Dresolve_run=true'
 
 bindkey '^R' history-incremental-pattern-search-backward
 bindkey '^[[Z' reverse-menu-complete
@@ -42,5 +46,7 @@ export LC_CTYPE=en_US.UTF-8
 
 export JAVA_HOME=/usr/lib/jvm/java-6-oracle/
 export INDEED_PROJECT_DIR=$HOME/reps
+# PATH is already marked as exported
 PATH=$INDEED_PROJECT_DIR/javadev/bin:$PATH
 export INDEED_CONFIG_DIR=$INDEED_PROJECT_DIR/javadev/myconfig
+function gvim () { (/usr/bin/gvim -f "$@" &) }
