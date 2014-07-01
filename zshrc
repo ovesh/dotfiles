@@ -21,19 +21,14 @@ setopt share_history
 # normal user prompt
 [ $UID != 0 ] && export PROMPT=$'%{\e[0;36m%}[%{\e[0m%}%n%{\e[0;36m%}@%{\e[0m%}%M%{\e[0;36m%}:%{\e[0m%}%~%{\e[0;36m%}]%{\e[0m%}%# '
 
-alias diffmerge='/Applications/DiffMerge.app/Contents/Resources/diffmerge.sh'
-alias mysqlstart='sudo /opt/local/bin/mysqld_safe5 &'
-alias mysqlstop='/opt/local/bin/mysqladmin5 -u root -p shutdown'
-alias b='brancher'
-alias sarlac='pushd /Users/ovesh/reps/portal/kvh-portal/opt/kvh-portal/sarlacc/'
 alias authp='pushd /Users/ovesh/reps/corp-sso/opt/auth-provider/'
-alias martin='pkgit --ng --np'
 alias grepp='grep -rn --color=always'
 alias rmorig='find . -name "*.orig" -exec rm {} \;'
 alias boop='aplay /usr/share/sounds/speech-dispatcher/test.wav'
 alias open='xdg-open'
 alias cb='xclip -selection clipboard'
 alias anti='ant -Dresolve_run=true'
+alias soft='kill -15'
 
 bindkey '^R' history-incremental-pattern-search-backward
 bindkey '^[[Z' reverse-menu-complete
@@ -50,3 +45,7 @@ export INDEED_PROJECT_DIR=$HOME/reps
 PATH=$INDEED_PROJECT_DIR/javadev/bin:$PATH
 export INDEED_CONFIG_DIR=$INDEED_PROJECT_DIR/javadev/myconfig
 function gvim () { (/usr/bin/gvim -f "$@" &) }
+export AWS_CREDENTIAL_FILE=$HOME/.aws/aws_credential_file
+
+# add packer to path
+PATH=/usr/local/packer:$PATH
