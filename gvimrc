@@ -1,1 +1,0 @@
-/Users/ovesh/.vim/gvimrc

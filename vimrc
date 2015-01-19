@@ -165,11 +165,11 @@ set directory=~/.vim/backup
 " Show (partial) command in the status line
 " set showcmd
 
-set guifont=Monospace\ 10
-set gfn=Monospace\ 9
+set guifont=Monaco:h10
+set gfn=Monaco:h10
 
 " share with system clipboard
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 " select last pasted text
 nnoremap <leader>v V`]
