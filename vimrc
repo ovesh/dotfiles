@@ -22,6 +22,7 @@ Plugin 'voithos/vim-python-matchit'
 Plugin 'tpope/vim-surround'
 Plugin 'garyharan/vim-proto'
 Plugin 'motus/pig.vim'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 filetype plugin indent on
@@ -35,9 +36,9 @@ set encoding=utf-8
 
 " Whitespace stuff
 set wrap
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 set list listchars=tab:\ \ ,trail:·
 
@@ -200,3 +201,4 @@ map <F1> <Esc>
 imap <F1> <Esc>
 
 :set lines=50 columns=180
+highlight link GitGutterChange DiffAdd

@@ -5,10 +5,10 @@
 	excludesfile = /Users/ovesh/.gitignore_global
 	editor = vim
 [difftool "sourcetree"]
-	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --nosplash \"$LOCAL\" \"$REMOTE\"
+	cmd = /usr/bin/diffmerge --nosplash \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+	cmd = /usr/bin/diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
 	trustExitCode = true
 [color]
 	status = auto
@@ -31,8 +31,6 @@
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit
 [diff]
 	tool = diffmerge
-[difftool "diffmerge"]
-	cmd = /Applications/DiffMerge.app/Contents/Resources/diffmerge.sh $LOCAL $REMOTE
 [grep]
 	lineNumber = true
 [push]

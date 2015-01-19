@@ -29,6 +29,7 @@ alias open='xdg-open'
 alias cb='xclip -selection clipboard'
 alias anti='ant -Dresolve_run=true'
 alias soft='kill -15'
+alias clip='MYSQL_JAR=lib/mysql--mysql-connector-java--mysql-connector-java--jar.jar ~/reps/javadev/bin/runCronjob.sh logrepo.clip.tools.ClipDaemon --props ~/.clip.properties --httpMonitorPort 22222 --log4j ~/log4j-cron.xml'
 
 bindkey '^R' history-incremental-pattern-search-backward
 bindkey '^[[Z' reverse-menu-complete
@@ -39,8 +40,9 @@ export EDITOR=vim
 
 export LC_CTYPE=en_US.UTF-8
 
-export JAVA_HOME=/usr/lib/jvm/java-6-oracle/
+export JAVA_HOME=/usr/lib/jvm/java-7-oracle/
 export INDEED_PROJECT_DIR=$HOME/reps
+export CATALINA7_HOME=$INDEED_PROJECT_DIR/javadev/tomcat
 # PATH is already marked as exported
 PATH=$INDEED_PROJECT_DIR/javadev/bin:$PATH
 export INDEED_CONFIG_DIR=$INDEED_PROJECT_DIR/javadev/myconfig
@@ -49,3 +51,7 @@ export AWS_CREDENTIAL_FILE=$HOME/.aws/aws_credential_file
 
 # add packer to path
 PATH=/usr/local/packer:$PATH
+
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
