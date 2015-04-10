@@ -60,3 +60,5 @@ PATH=/usr/local/packer:$PATH
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+launchctl setenv INDEED_PROJECT_DIR $INDEED_PROJECT_DIR
