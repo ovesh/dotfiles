@@ -44,12 +44,13 @@ PATH=/usr/local/bin:$PATH
 
 export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
 export INDEED_PROJECT_DIR=$HOME/reps
-export CATALINA7_HOME=$INDEED_PROJECT_DIR/javadev/tomcat
+export CATALINA7_HOME=$INDEED_PROJECT_DIR/javadev/apache-tomcat-7.0.8
 # PATH is already marked as exported
 PATH=$INDEED_PROJECT_DIR/javadev/bin:$PATH
 export INDEED_CONFIG_DIR=$INDEED_PROJECT_DIR/javadev/myconfig
 function gvim () { (/usr/bin/gvim -f "$@" &) }
 export AWS_CREDENTIAL_FILE=$HOME/.aws/aws_credential_file
+export INDEED_ENV_DIR=$HOME/env
 
 # for pyenv on osx
 eval "$(pyenv init -)"
@@ -67,3 +68,36 @@ export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 alias bell='echo -e "\a"'
 
 launchctl setenv INDEED_PROJECT_DIR $INDEED_PROJECT_DIR
+
+# Single-brace syntax because this is required in bash, dash, zsh, etc
+if [ -e "$HOME/env/etc/indeed_profile" ]; then
+    . "$HOME/env/etc/indeed_profile"
+fi
+
+# OPTIONAL, but recommended: Add ~/env/bin to your PATH to use the shared shell scripts from delivery/env
+if [ -d "$HOME/env/bin" ]; then
+    PATH="$HOME/env/bin:$PATH"
+fi
+
+export CDH4_HOME=$HOME/cdh4
+export HADOOP_HOME=$CDH4_HOME/hadoop-2.0.0-cdh4.7.1
+export HADOOP_LOG_DIR=$HADOOP_HOME/logs
+export HADOOP_CONF_DIR=/etc/hadoop/conf
+export HADOOP_OPTS="-Djava.security.krb5.conf=/etc/krb5.conf"
+export PIG_HOME=$CDH4_HOME/pig-0.11.0-cdh4.7.1
+export PIG_CLASSPATH="$HADOOP_CONF_DIR:$HADOOP_HOME/*:$HADOOP_HOME/lib/*"
+export HBASE_HOME=$CDH4_HOME/hbase-0.94.15-cdh4.7.1
+export HBASE_CONF_DIR=/etc/hbase/conf
+export PATH=$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PIG_HOME/bin:$HBASE_HOME/bin:$PATH
+
+export ANT_ARGS="-logger org.apache.tools.ant.listener.AnsiColorLogger"
+
+repos_to_update="~/env:${INDEED_PROJECT_DIR}/javadev"
+OLDIFS=$IFS
+IFS=":"
+for repo in $repos_to_update; do
+    if [[ -d ${repo} ]]; then
+        ~/env/bin/repo-current-async-check "${repo}"
+    fi
+done
+IFS=$OLDIFS
