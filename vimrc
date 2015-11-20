@@ -22,7 +22,7 @@ Plugin 'voithos/vim-python-matchit'
 Plugin 'tpope/vim-surround'
 Plugin 'garyharan/vim-proto'
 Plugin 'motus/pig.vim'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'fatih/vim-go'
 
 call vundle#end()
@@ -42,6 +42,8 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set list listchars=tab:\ \ ,trail:·
+set copyindent
+set preserveindent
 
 " Searching
 set hlsearch
@@ -134,7 +136,11 @@ filetype plugin indent on
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_messages={'level': 'warnings'}
-
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "active_filetypes": [],
+    \ "passive_filetypes": ["go"] }
+"
 " gist-vim defaults
 " if has("mac")
 "   let g:gist_clip_command = 'pbcopy'
@@ -203,3 +209,8 @@ imap <F1> <Esc>
 
 :set lines=50 columns=180
 highlight link GitGutterChange DiffAdd
+
+:set noantialias
+
+let g:gofmt_command = "goimports"
+"let g:go_fmt_autosave = 1
