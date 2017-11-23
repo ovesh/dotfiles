@@ -201,6 +201,3 @@ imap <F1> <Esc>
 
 :set lines=50 columns=180
 
-" for intellij
-nmap / :action Find<CR>
-nmap n :action FindNext<CR>

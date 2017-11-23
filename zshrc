@@ -15,6 +15,7 @@ bindkey -v
 
 setopt inc_append_history
 setopt share_history
+setopt interactivecomments
 
 # root prompt
 [ $UID = 0 ] && export PROMPT=$'%{\e[0;31m%}[%{\e[0m%}%n%{\e[0;31m%}@%{\e[0m%}%M%{\e[0;31m%}:%{\e[0m%}%~%{\e[0;31m%}]%{\e[0m%}%# '
@@ -55,9 +56,6 @@ export INDEED_ENV_DIR=$HOME/env
 # for pyenv on osx
 eval "$(pyenv init -)"
 
-# add packer to path
-PATH=/usr/local/packer:$PATH
-
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
@@ -79,15 +77,16 @@ if [ -d "$HOME/env/bin" ]; then
     PATH="$HOME/env/bin:$PATH"
 fi
 
-export CDH4_HOME=$HOME/cdh4
-export HADOOP_HOME=$CDH4_HOME/hadoop-2.0.0-cdh4.7.1
+export CDH5_HOME=$HOME/cdh5
+export HADOOP_HOME=$CDH5_HOME/hadoop-2.6.0-cdh5.11.0
 export HADOOP_LOG_DIR=$HADOOP_HOME/logs
 export HADOOP_CONF_DIR=/etc/hadoop/conf
 export HADOOP_OPTS="-Djava.security.krb5.conf=/etc/krb5.conf"
-export PIG_HOME=$CDH4_HOME/pig-0.11.0-cdh4.7.1
+export PIG_HOME=$CDH5_HOME/pig-0.12.0-cdh5.11.0
 export PIG_CLASSPATH="$HADOOP_CONF_DIR:$HADOOP_HOME/*:$HADOOP_HOME/lib/*"
-export HBASE_HOME=$CDH4_HOME/hbase-0.94.15-cdh4.7.1
+export HBASE_HOME=$CDH5_HOME/hbase-1.2.0-cdh5.11.0
 export HBASE_CONF_DIR=/etc/hbase/conf
+export CDH_MR2_HOME=$CDH5_HOME/share/hadoop/mapreduce
 export PATH=$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PIG_HOME/bin:$HBASE_HOME/bin:$PATH
 
 export ANT_ARGS="-logger org.apache.tools.ant.listener.AnsiColorLogger"
@@ -101,3 +100,16 @@ for repo in $repos_to_update; do
     fi
 done
 IFS=$OLDIFS
+export ETC=/Users/avishai/etc
+
+export PATH=$PATH:/Users/avishai/reps/shell-niceties/bin
+export PATH="/usr/local/sbin:$PATH"
+export PATH=$PATH:/Users/avishai/bin
+
+export CDPATH=.:${GOPATH}/src/indeed/devops:${GOPATH}/src/indeed/gophers
+
+autoload -U zmv
+alias mmv='noglob zmv -W'
+
+# see https://wiki.indeed.com/display/~hoenig/Generating+Go+mocks+with+mockery
+export MOCKERY_IMPORT_PREFIX=indeed/gophers/3rdparty/p/

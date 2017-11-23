@@ -22,4 +22,5 @@ PATH="/usr/local/bin:$PATH"
 
 export ANT_ARGS="-logger org.apache.tools.ant.listener.AnsiColorLogger $ANT_ARGS"
 PATH=$INDEED_PROJECT_DIR/javadev/bin:$PATH
+PATH="/usr/local/sbin:$PATH"
 launchctl setenv PATH $PATH
