@@ -46,7 +46,8 @@ export CATALINA7_HOME=$INDEED_PROJECT_DIR/javadev/apache-tomcat-7.0.8
 # PATH is already marked as exported
 PATH=$INDEED_PROJECT_DIR/javadev/bin:$PATH
 export INDEED_CONFIG_DIR=$INDEED_PROJECT_DIR/javadev/myconfig
-function gvim () { (/usr/bin/gvim -f "$@" &) }
+#function gvim () { (/usr/bin/gvim -f "$@" &) }
+function gvim () { (/usr/bin/gvim --servername GVIM --remote-tab "$@") }
 export AWS_CREDENTIAL_FILE=$HOME/.aws/aws_credential_file
 export INDEED_ENV_DIR=$HOME/env
 
@@ -57,10 +58,18 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+# for the system pip3 and aws-cli
+export PATH=$PATH:/home/avishai/.local/bin
+
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+export GO111MODULE=on
+export CDPATH=/home/avishai/go/src/indeed.com/systools:/home/avishai/go/src/indeed.com/neteng
+export GOPROXY=https://modprox-proxy.corp.indeed.com/
+export TAGGIT_REGISTRY_URL=https://mods.sandbox.indeed.net
 
-alias bell='echo -e "\a"'
+alias bell='echo -e "\a" ; notify-send DONE'
+alias copy='xclip -selection clipboard'
 
 # Single-brace syntax because this is required in bash, dash, zsh, etc
 if [ -e "$HOME/env/etc/indeed_profile" ]; then
@@ -94,3 +103,14 @@ for repo in $repos_to_update; do
     fi
 done
 IFS=$OLDIFS
+
+source <(kubectl completion zsh)
+
+# ignore terminal commands that start with '#'
+setopt interactivecomments
+
+# allow clearing the terminal with CTRL+K
+clr(){
+  printf "\ec"
+}
+bindkey -s '^k' 'clr^M'

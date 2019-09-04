@@ -23,7 +23,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'garyharan/vim-proto'
 Plugin 'motus/pig.vim'
 "Plugin 'Valloric/YouCompleteMe'
-Plugin 'fatih/vim-go'
+"Plugin 'fatih/vim-go'
 
 call vundle#end()
 filetype plugin indent on
