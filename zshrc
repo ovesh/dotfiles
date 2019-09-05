@@ -1,6 +1,7 @@
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _complete _ignored
+zstyle ':completion::complete:logvis-tail::' use-cache yes
 zstyle :compinstall filename '/Users/ovesh/.zshrc'
 
 autoload -Uz compinit
@@ -24,7 +25,7 @@ setopt interactivecomments
 
 alias authp='pushd /Users/ovesh/reps/corp-sso/opt/auth-provider/'
 alias grepp='grep -rn --color=always'
-alias rmorig='find . -name "*.orig" -exec rm {} \;'
+alias rmorig='find . -name "*.orig" -exec rm -v {} \;'
 alias boop='aplay /usr/share/sounds/speech-dispatcher/test.wav'
 alias cb='xclip -selection clipboard'
 alias anti='ant -Dresolve_run=true'
@@ -43,7 +44,7 @@ export LC_CTYPE=en_US.UTF-8
 # add homebrew to path
 PATH=/usr/local/bin:$PATH
 
-export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export INDEED_PROJECT_DIR=$HOME/reps
 export CATALINA7_HOME=$INDEED_PROJECT_DIR/javadev/apache-tomcat-7.0.8
 # PATH is already marked as exported
@@ -52,16 +53,22 @@ export INDEED_CONFIG_DIR=$INDEED_PROJECT_DIR/javadev/myconfig
 function gvim () { (/usr/bin/gvim -f "$@" &) }
 export AWS_CREDENTIAL_FILE=$HOME/.aws/aws_credential_file
 export INDEED_ENV_DIR=$HOME/env
+export INDEED_OFFICE=nrtoff
+
+export DISABLE_PYENV=1
 
 # for pyenv on osx
-eval "$(pyenv init -)"
+#eval "$(pyenv init -)"
 
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+#export PATH="$HOME/.pyenv/bin:$PATH"
+#eval "$(pyenv init -)"
+#eval "$(pyenv virtualenv-init -)"
 
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+export GO111MODULE=on
+export GOPROXY=https://modprox-proxy.corp.indeed.com/
+export TAGGIT_REGISTRY_URL=https://mods.sandbox.indeed.net/
 
 alias bell='echo -e "\a"'
 
@@ -106,10 +113,11 @@ export PATH=$PATH:/Users/avishai/reps/shell-niceties/bin
 export PATH="/usr/local/sbin:$PATH"
 export PATH=$PATH:/Users/avishai/bin
 
-export CDPATH=.:${GOPATH}/src/indeed/devops:${GOPATH}/src/indeed/gophers
+export CDPATH=.:${GOPATH}/src/indeed/devops:${GOPATH}/src/indeed/neteng:${GOPATH}/src/indeed/gophers:${GOPATH}/src/indeed.com/systools:${GOPATH}/src/indeed.com/gophers
 
 autoload -U zmv
 alias mmv='noglob zmv -W'
 
-# see https://wiki.indeed.com/display/~hoenig/Generating+Go+mocks+with+mockery
-export MOCKERY_IMPORT_PREFIX=indeed/gophers/3rdparty/p/
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

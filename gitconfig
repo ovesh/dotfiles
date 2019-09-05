@@ -4,11 +4,13 @@
 [core]
 	excludesfile = /Users/ovesh/.gitignore_global
 	editor = vim
-[difftool "sourcetree"]
+[difftool]
 	cmd = opendiff --nosplash \"$LOCAL\" \"$REMOTE\"
 	path = 
-[mergetool "sourcetree"]
-	cmd = opendiff --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+[merge]
+	tool = opendiff
+[mergetool "opendiff"]
+	#cmd = opendiff --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
 	trustExitCode = true
 [color]
 	status = auto
@@ -35,3 +37,10 @@
 	lineNumber = true
 [push]
 	default = simple
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[init]
+	templatedir = ~/.git-templates
