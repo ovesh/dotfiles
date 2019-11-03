@@ -69,6 +69,7 @@ export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 export GO111MODULE=on
 export GOPROXY=https://modprox-proxy.corp.indeed.com/
 export TAGGIT_REGISTRY_URL=https://mods.sandbox.indeed.net/
+export GOSUMDB=off
 
 alias bell='echo -e "\a"'
 
