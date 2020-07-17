@@ -54,15 +54,15 @@ export INDEED_ENV_DIR=$HOME/env
 # add packer to path
 PATH=/usr/local/packer:$PATH
 
-export PATH="$HOME/.pyenv/bin:$PATH"
+PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 # for the system pip3 and aws-cli
-export PATH=$PATH:/home/avishai/.local/bin
+PATH=$PATH:/home/avishai/.local/bin
 
 export GOPATH=$HOME/go
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 export GO111MODULE=on
 export CDPATH=/home/avishai/go/src/indeed.com/systools:/home/avishai/go/src/indeed.com/neteng
 export GOPROXY=https://modprox-proxy.corp.indeed.com/
