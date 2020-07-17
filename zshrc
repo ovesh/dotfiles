@@ -65,7 +65,7 @@ export GOPATH=$HOME/go
 PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 export GO111MODULE=on
 export CDPATH=/home/avishai/go/src/indeed.com/systools:/home/avishai/go/src/indeed.com/neteng
-export GOPROXY=https://modprox-proxy.corp.indeed.com/
+export GOPROXY=https://nexus.corp.indeed.com/repository/go/,https://modprox-proxy.corp.indeed.com/
 export TAGGIT_REGISTRY_URL=https://mods.sandbox.indeed.net
 
 alias bell='echo -e "\a" ; notify-send DONE'
