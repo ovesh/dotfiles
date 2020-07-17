@@ -22,6 +22,7 @@ Plugin 'voithos/vim-python-matchit'
 Plugin 'tpope/vim-surround'
 Plugin 'garyharan/vim-proto'
 Plugin 'motus/pig.vim'
+Plugin 'hashivim/vim-terraform'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'fatih/vim-go'
 
