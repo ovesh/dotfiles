@@ -124,3 +124,17 @@ bindkey -s '^k' 'clr^M'
 
 
 PATH=/home/avishai/.nvm/versions/node/v10.19.0/bin:$PATH
+
+# BEGIN env Setup -- Managed by Ansible DO NOT EDIT.
+
+# Single-brace syntax because this is required in bash and sh alike
+if [ -e "$HOME/env/etc/indeedrc" ]; then
+    . "$HOME/env/etc/indeedrc"
+fi
+
+
+if [ -d "$HOME/bin" ]; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+# END env Setup -- Managed by Ansible DO NOT EDIT.
