@@ -47,7 +47,7 @@ export CATALINA7_HOME=$INDEED_PROJECT_DIR/javadev/apache-tomcat-7.0.8
 PATH=$INDEED_PROJECT_DIR/javadev/bin:$PATH
 export INDEED_CONFIG_DIR=$INDEED_PROJECT_DIR/javadev/myconfig
 #function gvim () { (/usr/bin/gvim -f "$@" &) }
-function gvim () { (/usr/bin/gvim --servername GVIM --remote-tab "$@") }
+function gvim () { (/usr/bin/gvim --servername GVIM --remote-tab "$@") ; wmctrl -a gvim }
 export AWS_CREDENTIAL_FILE=$HOME/.aws/aws_credential_file
 export INDEED_ENV_DIR=$HOME/env
 
