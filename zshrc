@@ -99,6 +99,7 @@ export HBASE_CONF_DIR=/etc/hbase/conf
 export PATH=$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PIG_HOME/bin:$HBASE_HOME/bin:$PATH
 
 export ANT_ARGS="-logger org.apache.tools.ant.listener.AnsiColorLogger"
+export NVM_DIR=/home/avishai/.nvm
 
 repos_to_update="~/env:${INDEED_PROJECT_DIR}/javadev"
 OLDIFS=$IFS
