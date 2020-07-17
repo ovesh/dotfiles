@@ -41,7 +41,6 @@ export EDITOR=vim
 
 export LC_CTYPE=en_US.UTF-8
 
-export JAVA_HOME=/usr/lib/jvm/java-7-oracle/
 export INDEED_PROJECT_DIR=$HOME/reps
 export CATALINA7_HOME=$INDEED_PROJECT_DIR/javadev/apache-tomcat-7.0.8
 # PATH is already marked as exported
