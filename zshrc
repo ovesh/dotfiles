@@ -121,3 +121,6 @@ clr(){
   printf "\ec"
 }
 bindkey -s '^k' 'clr^M'
+
+
+PATH=/home/avishai/.nvm/versions/node/v10.19.0/bin:$PATH
