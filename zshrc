@@ -83,6 +83,9 @@ fi
 if [ -d "$HOME/env/bin" ]; then
     PATH="$HOME/env/bin:$PATH"
 fi
+if [ -d "$HOME/reps/hobo/bin" ]; then
+    PATH="$HOME/reps/hobo/bin:$PATH"
+fi
 
 export CDH4_HOME=$HOME/cdh4
 export HADOOP_HOME=$CDH4_HOME/hadoop-2.0.0-cdh4.7.1
