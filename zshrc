@@ -72,6 +72,7 @@ export GOSUMDB=off
 alias bell='echo -e "\a" ; notify-send DONE'
 alias copy='xclip -selection clipboard'
 alias futp='sudo modprobe -r psmouse && sudo modprobe psmouse'
+alias ivpn='globalprotect connect -p mobile.vpn.indeed.com'
 
 # Single-brace syntax because this is required in bash, dash, zsh, etc
 if [ -e "$HOME/env/etc/indeed_profile" ]; then
