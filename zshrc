@@ -71,6 +71,7 @@ export GOSUMDB=off
 
 alias bell='echo -e "\a" ; notify-send DONE'
 alias copy='xclip -selection clipboard'
+alias futp='sudo modprobe -r psmouse && sudo modprobe psmouse'
 
 # Single-brace syntax because this is required in bash, dash, zsh, etc
 if [ -e "$HOME/env/etc/indeed_profile" ]; then
