@@ -41,15 +41,9 @@ export EDITOR=vim
 
 export LC_CTYPE=en_US.UTF-8
 
-export INDEED_PROJECT_DIR=$HOME/reps
-export CATALINA7_HOME=$INDEED_PROJECT_DIR/javadev/apache-tomcat-7.0.8
-# PATH is already marked as exported
-PATH=$INDEED_PROJECT_DIR/javadev/bin:$PATH
-export INDEED_CONFIG_DIR=$INDEED_PROJECT_DIR/javadev/myconfig
 #function gvim () { (/usr/bin/gvim -f "$@" &) }
 function gvim () { (/usr/bin/gvim --servername GVIM --remote-tab "$@") ; wmctrl -a gvim }
 export AWS_CREDENTIAL_FILE=$HOME/.aws/aws_credential_file
-export INDEED_ENV_DIR=$HOME/env
 
 export PYENV_ROOT="$HOME/.pyenv"
 PATH="$HOME/.pyenv/bin:$PATH"
@@ -61,13 +55,8 @@ fi
 # for the system pip3 and aws-cli
 PATH=$PATH:/home/avishai/.local/bin
 
-export GOPATH=$HOME/go
-PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
-export GO111MODULE=on
-export CDPATH=/home/avishai/go/src/indeed.com/systools:/home/avishai/go/src/indeed.com/neteng
-export GOPROXY=https://nexus.corp.indeed.com/repository/go/,https://modprox-proxy.corp.indeed.com/
-export TAGGIT_REGISTRY_URL=https://mods.sandbox.indeed.net
-export GOSUMDB=off
+#export GOPATH=$HOME/go
+#PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 alias bell='echo -e "\a" ; notify-send DONE'
 alias copy='xclip -selection clipboard'
@@ -100,19 +89,6 @@ PATH=$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PIG_HOME/bin:$HBASE_HOME/bin:$PATH
 PATH=$HOME/bin:$PATH
 PATH=$HOME/.krew/bin:$PATH
 
-export ANT_ARGS="-logger org.apache.tools.ant.listener.AnsiColorLogger"
-export NVM_DIR=/home/avishai/.nvm
-
-repos_to_update="~/env:${INDEED_PROJECT_DIR}/javadev"
-OLDIFS=$IFS
-IFS=":"
-for repo in $repos_to_update; do
-    if [[ -d ${repo} ]]; then
-        ~/env/bin/repo-current-async-check "${repo}"
-    fi
-done
-IFS=$OLDIFS
-
 source <(kubectl completion zsh)
 
 # ignore terminal commands that start with '#'
@@ -124,8 +100,6 @@ clr(){
 }
 bindkey -s '^k' 'clr^M'
 
-
-PATH=/home/avishai/.nvm/versions/node/v10.19.0/bin:$PATH
 
 # BEGIN env Setup -- Managed by Ansible DO NOT EDIT.
 
