@@ -51,12 +51,12 @@ function gvim () { (/usr/bin/gvim --servername GVIM --remote-tab "$@") ; wmctrl 
 export AWS_CREDENTIAL_FILE=$HOME/.aws/aws_credential_file
 export INDEED_ENV_DIR=$HOME/env
 
-# add packer to path
-PATH=/usr/local/packer:$PATH
-
+export PYENV_ROOT="$HOME/.pyenv"
 PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+fi
 
 # for the system pip3 and aws-cli
 PATH=$PATH:/home/avishai/.local/bin
@@ -96,7 +96,9 @@ export PIG_HOME=$CDH4_HOME/pig-0.11.0-cdh4.7.1
 export PIG_CLASSPATH="$HADOOP_CONF_DIR:$HADOOP_HOME/*:$HADOOP_HOME/lib/*"
 export HBASE_HOME=$CDH4_HOME/hbase-0.94.15-cdh4.7.1
 export HBASE_CONF_DIR=/etc/hbase/conf
-export PATH=$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PIG_HOME/bin:$HBASE_HOME/bin:$PATH
+PATH=$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PIG_HOME/bin:$HBASE_HOME/bin:$PATH
+PATH=$HOME/bin:$PATH
+PATH=$HOME/.krew/bin:$PATH
 
 export ANT_ARGS="-logger org.apache.tools.ant.listener.AnsiColorLogger"
 export NVM_DIR=/home/avishai/.nvm
@@ -127,14 +129,14 @@ PATH=/home/avishai/.nvm/versions/node/v10.19.0/bin:$PATH
 
 # BEGIN env Setup -- Managed by Ansible DO NOT EDIT.
 
-# Single-brace syntax because this is required in bash and sh alike
-if [ -e "$HOME/env/etc/indeedrc" ]; then
-    . "$HOME/env/etc/indeedrc"
+# Setup INDEED_ENV_DIR earlier.
+if [ -z "${INDEED_ENV_DIR}" ]; then
+    export INDEED_ENV_DIR="${HOME}/env/"
 fi
 
-
-if [ -d "$HOME/bin" ]; then
-    PATH="$HOME/bin:$PATH"
+# Single-brace syntax because this is required in bash and sh alike
+if [ -e "${INDEED_ENV_DIR}/etc/indeedrc" ]; then
+    . "${INDEED_ENV_DIR}/etc/indeedrc"
 fi
 
 # END env Setup -- Managed by Ansible DO NOT EDIT.

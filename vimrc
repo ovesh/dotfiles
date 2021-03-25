@@ -25,6 +25,7 @@ Plugin 'motus/pig.vim'
 Plugin 'hashivim/vim-terraform'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'fatih/vim-go'
+Plugin 'udalov/kotlin-vim'
 
 call vundle#end()
 filetype plugin indent on
