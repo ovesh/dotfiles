@@ -23,7 +23,7 @@ setopt share_history
 
 alias authp='pushd /Users/ovesh/reps/corp-sso/opt/auth-provider/'
 alias grepp='grep -rn --color=always'
-alias rmorig='find . -name "*.orig" -exec rm {} \;'
+alias rmorig='find . -name "*.orig" -exec rm -v {} \;'
 alias boop='aplay /usr/share/sounds/speech-dispatcher/test.wav'
 alias open='xdg-open'
 alias cb='xclip -selection clipboard'
