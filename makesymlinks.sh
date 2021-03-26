@@ -10,7 +10,7 @@ set -x
 
 dir=~/reps/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bash_profile bashrc gitconfig gitignore_global gvimrc vimrc zshrc"    # list of files/folders to symlink in homedir
+files="bashrc gitconfig gitignore_global gvimrc vimrc zshrc"    # list of files/folders to symlink in homedir
 
 ##########
 
