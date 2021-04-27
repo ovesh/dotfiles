@@ -31,6 +31,7 @@ alias cb='xclip -selection clipboard'
 alias anti='ant -Dresolve_run=true'
 alias soft='kill -15'
 alias clip='MYSQL_JAR=lib/mysql--mysql-connector-java--mysql-connector-java--jar.jar ~/reps/javadev/bin/runCronjob.sh logrepo.clip.tools.ClipDaemon --props ~/.clip.properties --httpMonitorPort 22222 --log4j ~/log4j-cron.xml'
+alias gradleo="gradle --offline"
 
 bindkey '^R' history-incremental-pattern-search-backward
 bindkey '^[[Z' reverse-menu-complete
@@ -41,19 +42,13 @@ export EDITOR=vim
 
 export LC_CTYPE=en_US.UTF-8
 
-# add homebrew to path
-PATH=/usr/local/bin:$PATH
-
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export INDEED_PROJECT_DIR=$HOME/reps
 export CATALINA7_HOME=$INDEED_PROJECT_DIR/javadev/apache-tomcat-7.0.8
-# PATH is already marked as exported
-PATH=$INDEED_PROJECT_DIR/javadev/bin:$PATH
 export INDEED_CONFIG_DIR=$INDEED_PROJECT_DIR/javadev/myconfig
 function gvim () { (/usr/bin/gvim -f "$@" &) }
 export AWS_CREDENTIAL_FILE=$HOME/.aws/aws_credential_file
-export INDEED_ENV_DIR=$HOME/env
-export INDEED_OFFICE=nrtoff
+#export INDEED_ENV_DIR=$HOME/env
+#export INDEED_OFFICE=seaoff
 
 export DISABLE_PYENV=1
 
@@ -64,26 +59,16 @@ export DISABLE_PYENV=1
 #eval "$(pyenv init -)"
 #eval "$(pyenv virtualenv-init -)"
 
-export GOPATH=$HOME/go
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
-export GO111MODULE=on
-export GOPROXY=https://modprox-proxy.corp.indeed.com/
-export TAGGIT_REGISTRY_URL=https://mods.sandbox.indeed.net/
-export GOSUMDB=off
+# export GOPATH=$HOME/go
+# export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+# export GO111MODULE=on
+# export GOPROXY=https://nexus.corp.indeed.com/repository/go/,https://modprox-proxy.corp.indeed.com/
+# export TAGGIT_REGISTRY_URL=https://mods.sandbox.indeed.net/
+# export GOSUMDB=off
 
 alias bell='echo -e "\a"'
 
 launchctl setenv INDEED_PROJECT_DIR $INDEED_PROJECT_DIR
-
-# Single-brace syntax because this is required in bash, dash, zsh, etc
-if [ -e "$HOME/env/etc/indeed_profile" ]; then
-    . "$HOME/env/etc/indeed_profile"
-fi
-
-# OPTIONAL, but recommended: Add ~/env/bin to your PATH to use the shared shell scripts from delivery/env
-if [ -d "$HOME/env/bin" ]; then
-    PATH="$HOME/env/bin:$PATH"
-fi
 
 export CDH5_HOME=$HOME/cdh5
 export HADOOP_HOME=$CDH5_HOME/hadoop-2.6.0-cdh5.11.0
@@ -96,8 +81,6 @@ export HBASE_HOME=$CDH5_HOME/hbase-1.2.0-cdh5.11.0
 export HBASE_CONF_DIR=/etc/hbase/conf
 export CDH_MR2_HOME=$CDH5_HOME/share/hadoop/mapreduce
 export PATH=$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PIG_HOME/bin:$HBASE_HOME/bin:$PATH
-
-export ANT_ARGS="-logger org.apache.tools.ant.listener.AnsiColorLogger"
 
 repos_to_update="~/env:${INDEED_PROJECT_DIR}/javadev"
 OLDIFS=$IFS
@@ -113,6 +96,7 @@ export ETC=/Users/avishai/etc
 export PATH=$PATH:/Users/avishai/reps/shell-niceties/bin
 export PATH="/usr/local/sbin:$PATH"
 export PATH=$PATH:/Users/avishai/bin
+export PATH="/Users/avishai/.krew/bin:$PATH"
 
 export CDPATH=.:${GOPATH}/src/indeed/devops:${GOPATH}/src/indeed/neteng:${GOPATH}/src/indeed/gophers:${GOPATH}/src/indeed.com/systools:${GOPATH}/src/indeed.com/gophers
 
