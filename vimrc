@@ -26,6 +26,7 @@ Plugin 'hashivim/vim-terraform'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'fatih/vim-go'
 Plugin 'udalov/kotlin-vim'
+"Plugin 'pedrohdz/vim-yaml-folds'
 
 call vundle#end()
 filetype plugin indent on
@@ -213,6 +214,9 @@ imap <F1> <Esc>
 highlight link GitGutterChange DiffAdd
 
 :set noantialias
+
+:set foldmethod=syntax
+set foldlevelstart=20
 
 let g:gofmt_command = "goimports"
 "let g:go_fmt_autosave = 1
