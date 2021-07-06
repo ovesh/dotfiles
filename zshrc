@@ -32,6 +32,7 @@ alias anti='ant -Dresolve_run=true'
 alias soft='kill -15'
 alias clip='MYSQL_JAR=lib/mysql--mysql-connector-java--mysql-connector-java--jar.jar ~/reps/javadev/bin/runCronjob.sh logrepo.clip.tools.ClipDaemon --props ~/.clip.properties --httpMonitorPort 22222 --log4j ~/log4j-cron.xml'
 alias gradleo="gradle --offline"
+alias mvim='open -a MacVim'
 
 bindkey '^R' history-incremental-pattern-search-backward
 bindkey '^[[Z' reverse-menu-complete
