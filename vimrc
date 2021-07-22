@@ -212,5 +212,8 @@ highlight link GitGutterChange DiffAdd
 
 :set noantialias
 
+:set foldmethod=syntax
+set foldlevelstart=20
+
 let g:gofmt_command = "goimports"
 "let g:go_fmt_autosave = 1
