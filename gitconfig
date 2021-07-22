@@ -53,11 +53,11 @@
 # END Managed by shell_setup role
 # BEGIN Managed by git_ssh role
 
-[includeIf "gitdir:~/artifacts/"]
-    path = .gitconfig-ind
 [includeIf "gitdir:/Users/avishai/reps/"]
     path = .gitconfig-ind
-[includeIf "gitdir:~/env/"]
+[includeIf "gitdir:/Users/avishai/env"]
+    path = .gitconfig-ind
+[includeIf "gitdir:~/artifacts/"]
     path = .gitconfig-ind
 [includeIf "gitdir:~/go/src/indeed.com/"]
     path = .gitconfig-ind
