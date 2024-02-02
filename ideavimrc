@@ -1,2 +1,6 @@
 " share with system clipboard
 set clipboard=unnamed
+
+set hlsearch
+
+set nooldundo

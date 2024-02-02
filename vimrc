@@ -24,6 +24,8 @@ Plugin 'garyharan/vim-proto'
 Plugin 'motus/pig.vim'
 "Plugin 'Valloric/YouCompleteMe'
 Plugin 'fatih/vim-go'
+Plugin 'earthly/earthly.vim'
+Plugin 'broadinstitute/vim-wdl'
 
 call vundle#end()
 filetype plugin indent on
